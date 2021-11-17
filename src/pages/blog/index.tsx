@@ -15,12 +15,13 @@ export const getStaticProps = async () => {
     })
 }
 
-function Blog({ articles }:any) {
+function Blog({ articles }: any) {
     console.log(articles)
-    const cards = articles.map((elm) => (
+    const cards = articles.map((elm: any) => (
         <ArticleCard
+            key={elm.id}
             title={elm.title}
-            tag={elm.category.map((cat) => cat.name)}
+            tag={elm.category.map((cat:any) => cat.name)}
             to={`/blog/${elm.id}`}
             thumbnail={elm.thumbnail.url}
         />
