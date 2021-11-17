@@ -25,7 +25,7 @@ export const getStaticProps = async ({ params }:any) => {
     })
 }
 
-function Article({ article }) {
+function Article({ article }:any) {
     console.log(article)
     return (
         <Box mt={10}>
@@ -34,7 +34,7 @@ function Article({ article }) {
                     {article.title}
                 </Heading>
                 <Divider />
-                <Text>カテゴリ: {article.category.map((elm) => elm.name)}</Text>
+                <Text>カテゴリ: {article.category.map((elm:any) => elm.name)}</Text>
                 <Text>published: {article.publishedAt}</Text>
                 <div dangerouslySetInnerHTML={{
                     __html: `${article.article}`,
