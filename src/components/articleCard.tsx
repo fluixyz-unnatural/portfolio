@@ -2,7 +2,7 @@ import { Box, VStack, HStack, Image, Divider, Heading, Text, Link } from "@chakr
 
 interface Props {
     title: string;
-    summary: string;
+    tag: Array<string>;
     thumbnail: string;
     to: string;
 }
@@ -15,7 +15,7 @@ function ArticleCard(props: Props) {
                 <VStack align="left" textAlign="left" w="full">
                     <Heading size="md">{props.title}</Heading>
                     <Divider />
-                    <Text size="sm" fontSize="0.8rem">{props.summary}</Text>
+                    <HStack>{props.tag.map((elm, index) => <Text key={index}>{elm}</Text>)}</HStack>
                 </VStack>
             </HStack>
         </Box>
