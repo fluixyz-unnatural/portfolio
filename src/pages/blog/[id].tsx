@@ -8,11 +8,11 @@ export const getStaticPaths = async () => {
         endpoint: 'article',
         queries: { fields: 'id' }
     })
-    const paths = data.contents.map((elm) => '/blog/' + elm.id)
+    const paths = data.contents.map((elm:any) => '/blog/' + elm.id)
     return { paths, fallback: false }
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }:any) => {
     const data = await client.get({
         endpoint: 'article',
         queries: { ids: params.id }
