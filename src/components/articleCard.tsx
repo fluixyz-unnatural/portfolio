@@ -5,18 +5,24 @@ interface Props {
     tag: Array<string>;
     thumbnail: string;
     to: string;
+    publish: string;
+    revised: string;
 }
 
 function ArticleCard(props: Props) {
     return (
-        <Box shadow="md" borderRadius={10} overflow="hidden" width="full">
+        <Box shadow="md" borderRadius={10} overflow="hidden" width="full" p={"1rem"}>
             <HStack as={Link} href={props.to} >
-                <Image boxSize="100px" objectFit="cover" src={props.thumbnail} />
                 <VStack align="left" textAlign="left" w="full">
                     <Heading size="md">{props.title}</Heading>
-                    <Divider />
-                    <HStack>{props.tag.map((elm, index) => <Text key={index}>{elm}</Text>)}</HStack>
+                    <HStack fontSize="sm">
+                        <Text>公開: {props.publish}</Text>
+                        <Text>更新: {props.revised}</Text>
+                        <Text>カテゴリ: </Text>
+                        {props.tag.map((elm, index) => <Text key={index}>{elm}</Text>)}
+                    </HStack>
                 </VStack>
+                <Image boxSize="100px" objectFit="cover" src={props.thumbnail} alt="thumbnail" />
             </HStack>
         </Box>
     )
