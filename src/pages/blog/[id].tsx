@@ -1,18 +1,28 @@
 import React from "react"
-import { useRouter } from "next/dist/client/router"
-import { Box, Heading, Text, VStack, Divider } from "@chakra-ui/react"
+import { Box, Heading, Text, VStack, HStack } from "@chakra-ui/react"
 import { client } from "../../libs/client"
+import BlogHeader from "src/components/blogHeader"
+import { MicroCMSListContent } from "microcms-js-sdk"
+import { BlogType, MicroCMSIdsList, IdObject } from "src/types/microcms"
 
 export const getStaticPaths = async () => {
-    const data = await client.get({
+    const data: MicroCMSIdsList = await client.get({
         endpoint: 'article',
         queries: { fields: 'id' }
     })
-    const paths = data.contents.map((elm:any) => '/blog/' + elm.id)
+    const paths = data.contents.map((elm: IdObject) => '/blog/' + elm.id)
     return { paths, fallback: false }
 }
 
-export const getStaticProps = async ({ params }:any) => {
+// TODO わからんぴ
+interface nani{
+    id: string;
+}
+interface nanikore {
+    params: nani;
+}
+
+export const getStaticProps = async ({ params }: nanikore) => {
     const data = await client.get({
         endpoint: 'article',
         queries: { ids: params.id }
@@ -25,22 +35,34 @@ export const getStaticProps = async ({ params }:any) => {
     })
 }
 
-function Article({ article }:any) {
-    console.log(article)
+interface Props {
+    article: (BlogType & MicroCMSListContent)
+}
+
+function Article({ article }: Props) {
     return (
-        <Box mt={10}>
-            <VStack>
-                <Heading>
-                    {article.title}
-                </Heading>
-                <Divider />
-                <Text>カテゴリ: {article.category.map((elm:any) => elm.name)}</Text>
-                <Text>published: {article.publishedAt}</Text>
-                <div dangerouslySetInnerHTML={{
-                    __html: `${article.article}`,
-                }} />
-            </VStack>
-        </Box>
+        <>
+            <BlogHeader />
+            <Box mt={10} maxW="630px" m="auto" >
+                <VStack align="flex-start" spacing="2rem" m="20px">
+                    <Box>
+                        <Heading mb="1rem" fontSize="1.6rem" textAlign="left">
+                            {article.title}
+                        </Heading>
+                        <HStack>
+                            <Text fontSize="sm">published: {article.publishedAt.split('T')[0]}</Text>
+                            <Text fontSize="sm">revised: {article.revisedAt.split('T')[0]}</Text>
+                            <Text fontSize="sm">カテゴリ: {article.category.map((elm: any) => elm.name)}</Text>
+                        </HStack>
+                    </Box>
+                    <Box>
+                        <div dangerouslySetInnerHTML={{
+                            __html: `${article.article}`,
+                        }} />
+                    </Box>
+                </VStack>
+            </Box>
+        </>
     )
 }
 
