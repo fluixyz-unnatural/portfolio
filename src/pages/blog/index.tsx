@@ -47,7 +47,7 @@ function Blog({ articles }: BlogProps) {
                 <meta name="og:title" content="fluixyz's log"></meta>
             </Head>
             <BlogHeader />
-            <Box m="1rem">
+            <Box p="1rem">
                 <VStack maxW="630px" m="auto" >
                     {cards}
                 </VStack>
