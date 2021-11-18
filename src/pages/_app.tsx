@@ -1,5 +1,6 @@
 import { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react"
+import '../styles/article.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
