@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <Box m={20}>
       <VStack spacing="30px">
-        <chakra.h1 pointerEvents="none" fontSize={"4rem"} textAlign='center' >Fluixyz</chakra.h1>
+        <chakra.h1 fontFamily={"Fjalla One"} pointerEvents="none" fontSize={"4rem"} textAlign='center' >fluixyz</chakra.h1>
         <Divider />
         <VStack>
           <Box ><Link fontSize="1.5rem" href="/blog">blog</Link></Box>
