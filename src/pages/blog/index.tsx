@@ -1,13 +1,14 @@
 import React from "react"
-import { Box, chakra, VStack, Link } from "@chakra-ui/react"
+import { Box, VStack } from "@chakra-ui/react"
 import ArticleCard from "src/components/articleCard";
 import { client } from "../../libs/client"
 import BlogHeader from "src/components/blogHeader";
 import { MicroCMSListContent, MicroCMSListResponse } from "microcms-js-sdk";
 import { BlogType, CategoryType } from "src/types/microcms";
+import Head from "next/head";
 
 export const getStaticProps = async () => {
-    const data:MicroCMSListResponse<BlogType> = await client.get({
+    const data: MicroCMSListResponse<BlogType> = await client.get({
         endpoint: 'article',
     })
 
@@ -37,6 +38,12 @@ function Blog({ articles }: BlogProps) {
     ))
     return (
         <>
+            <Head>
+                <title>{"fluixyz's log"}</title>
+                <meta name="description" content="fluixyzのブログ"></meta>
+                <meta name="og:description" content="fluixyzのブログ"></meta>
+                <meta name="og:title" content="fluixyz's log"></meta>
+            </Head>
             <BlogHeader />
             <Box m="1rem">
                 <VStack maxW="630px" m="auto" >
