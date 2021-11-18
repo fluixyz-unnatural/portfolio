@@ -1,5 +1,5 @@
 import { Box, VStack, HStack, Image, Divider, Heading, Text, Link } from "@chakra-ui/react"
-
+import { TimeIcon, RepeatClockIcon } from "@chakra-ui/icons"
 interface Props {
     title: string;
     tag: Array<string>;
@@ -16,8 +16,12 @@ function ArticleCard(props: Props) {
                 <VStack align="left" textAlign="left" w="full">
                     <Heading size="md">{props.title}</Heading>
                     <HStack fontSize="sm">
-                        <Text>公開: {props.publish}</Text>
-                        <Text>更新: {props.revised}</Text>
+                        <TimeIcon /><Text>{props.publish}</Text>
+                        {
+                            props.publish == props.revised ? <Text></Text> : (<><RepeatClockIcon /><Text> {props.revised}</Text></>)
+                        }
+                    </HStack>
+                    <HStack fontSize="sm">
                         <Text>カテゴリ: </Text>
                         {props.tag.map((elm, index) => <Text key={index}>{elm}</Text>)}
                     </HStack>
