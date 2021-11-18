@@ -7,6 +7,8 @@ export default function Home() {
     <>
       <Head>
         <title>fluixyz</title>
+        <meta name="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
         <meta name="description" content="fluixyzのブログ兼ポートフォリオサイトです。"></meta>
         <meta name="og:description" content="fluixyzのブログ兼ポートフォリオサイトです。"></meta>
         <meta name="og:title" content="fluixyz"></meta>

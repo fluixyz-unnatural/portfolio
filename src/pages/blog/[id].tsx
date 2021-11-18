@@ -45,6 +45,8 @@ function Article({ article }: Props) {
         <>
             <Head>
                 <title>{`${article.title} | fluixyz'log`}</title>
+                <meta name="og:type" content="article" />
+                <meta name="twitter:card" content="summary" />
                 <meta name="og:image" content={`${article.thumbnail}`} />
                 <meta name="og:title" content={`${article.title} | fluixyz'log`} />
             </Head>

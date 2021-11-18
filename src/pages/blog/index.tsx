@@ -40,6 +40,8 @@ function Blog({ articles }: BlogProps) {
         <>
             <Head>
                 <title>{"fluixyz's log"}</title>
+                <meta name="og:type" content="website" />
+                <meta name="twitter:card" content="summary" />
                 <meta name="description" content="fluixyzのブログ"></meta>
                 <meta name="og:description" content="fluixyzのブログ"></meta>
                 <meta name="og:title" content="fluixyz's log"></meta>
