@@ -13,7 +13,7 @@ export default function Home() {
         <meta name="og:description" content="fluixyzのブログ兼ポートフォリオサイトです。"></meta>
         <meta name="og:title" content="fluixyz"></meta>
       </Head>
-      <Box m={20}>
+      <Box p={20}>
         <VStack spacing="30px">
           <chakra.h1 fontFamily={"Fjalla One"} pointerEvents="none" fontSize={"4rem"} textAlign='center' >fluixyz</chakra.h1>
           <Divider />

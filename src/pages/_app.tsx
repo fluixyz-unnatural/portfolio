@@ -5,7 +5,10 @@ import '../styles/article.css'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
-      <Component {...pageProps} />
+      <div style={{ minHeight: "100vh", position: "relative", paddingBottom: "120px", boxSizing: "border-box" }}>
+        <Component {...pageProps} />
+        <footer style={{ width: "100%", background: "#eeeeee", textAlign: "center", padding: "30px 0px", position: "absolute", bottom: 0 }}>ｸﾞｪ</footer>
+      </div>
     </ChakraProvider>
   )
 }
