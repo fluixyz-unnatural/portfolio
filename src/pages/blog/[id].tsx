@@ -15,7 +15,7 @@ export const getStaticPaths = async () => {
 }
 
 // TODO わからんぴ
-interface nani{
+interface nani {
     id: string;
 }
 interface nanikore {
@@ -44,7 +44,7 @@ function Article({ article }: Props) {
         <>
             <BlogHeader />
             <Box mt={10} maxW="630px" m="auto" >
-                <VStack align="flex-start" spacing="2rem" m="20px">
+                <VStack align="flex-start" spacing="2rem" m="20px" mb="300px">
                     <Box>
                         <Heading mb="1rem" fontSize="1.6rem" textAlign="left">
                             {article.title}
@@ -56,7 +56,7 @@ function Article({ article }: Props) {
                         </HStack>
                     </Box>
                     <Box>
-                        <div dangerouslySetInnerHTML={{
+                        <div className="blog-article" dangerouslySetInnerHTML={{
                             __html: `${article.article}`,
                         }} />
                     </Box>
