@@ -4,6 +4,10 @@ export interface CategoryType {
     name: string
 }
 
+export interface TechsType {
+    name: string
+}
+
 export interface IdObject {
     id: string;
 }
@@ -20,4 +24,13 @@ export interface BlogType {
     article:string;
     category:Array<CategoryType & MicroCMSListContent>
     thumbnail:MicroCMSImage
+}
+
+export interface WorkType {
+    id:string
+    title:string;
+    summary:string;
+    tags:Array<TechsType & MicroCMSListContent>
+    thumbnail:MicroCMSImage
+    blog: IdObject
 }
