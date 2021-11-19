@@ -13,19 +13,16 @@ export default function Home() {
         <meta name="og:description" content="fluixyzのブログ兼ポートフォリオサイトです。"></meta>
         <meta name="og:title" content="fluixyz"></meta>
       </Head>
-      <Box p={20}>
-        <VStack spacing="30px">
+      <Box p={[10,20]}>
+        <VStack h={["50vh"]} justify="space-between">
           <chakra.h1 fontFamily={"Fjalla One"} pointerEvents="none" fontSize={"4rem"} textAlign='center' >fluixyz</chakra.h1>
           <Divider />
-          <VStack>
-            <Box ><Link fontSize="1.5rem" href="/blog">blog</Link></Box>
-            <Box><Link fontSize="1.5rem" href="/works">works</Link></Box>
-          </VStack>
-          <Divider />
-          <HStack>
+          <VStack fontSize="1.5rem" spacing="2rem" >
+            <Link href="/blog">blog</Link>
+            <Link href="/works">works</Link>
             <Link href="https://github.com/fluixyz-unnatural">github</Link>
             <Link href="https://twitter.com/higara333">twitter</Link>
-          </HStack>
+          </VStack>
         </VStack>
       </Box>
     </>
