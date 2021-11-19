@@ -12,7 +12,7 @@ const WorkCard = (props: Props) => {
     return (
         <>
             <Link href={`/blog/${props.blog}`}>
-                <Box w="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+                <Box w={["100%","sm"]} borderWidth="1px" borderRadius="lg" overflow="hidden">
                     <Image src={props.thumbnail} alt="thumbnail" w="full" h={48} objectFit="cover" />
                     <Box p={5}>
                         <Heading mb={2} size="md">{props.title}</Heading>
