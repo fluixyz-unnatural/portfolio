@@ -6,5 +6,21 @@
 }
 .blog-article p {
   margin-bottom: 2rem;
-  line-height:1.85rem;
+  line-height: 1.85rem;
+}
+.blog-article a {
+  color: rgb(0, 99, 156);
+  text-decoration: underline;
+}
+
+.blog-article h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-article img {
+  margin: 1rem auto;
+  width: 95%;
 }
