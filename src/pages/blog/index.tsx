@@ -24,7 +24,6 @@ interface BlogProps {
 }
 
 function Blog({ articles }: BlogProps) {
-    console.log(articles)
     const cards = articles.map((elm: BlogType & MicroCMSListContent) => (
         <ArticleCard
             key={elm.id}

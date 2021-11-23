@@ -17,7 +17,6 @@ export const getStaticProps = async () => {
         .get({
             endpoint: 'works',
         })
-    console.log(data)
     return ({
         props: {
             works: data.contents,
