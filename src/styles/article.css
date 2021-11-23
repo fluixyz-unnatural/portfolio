@@ -1,13 +1,14 @@
 .blog-article h3 {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 .blog-article p {
-  margin-bottom: 2rem;
-  line-height: 1.85rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.9rem;
 }
+
 .blog-article a {
   color: rgb(0, 99, 156);
   text-decoration: underline;
@@ -16,7 +17,7 @@
 .blog-article h4 {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 
