@@ -69,8 +69,8 @@ const Page = (props: PageProps) => {
                 <meta name="og:title" content="fluixyz's log"></meta>
             </Head>
             <BlogHeader />
-            <Box p="1rem">
-                <VStack maxW="630px" m="auto" >
+            <Box >
+                <VStack maxW="630px" m="auto" spacing={4} >
                     {cards}
                 </VStack>
                 <HStack maxW="630px" m="auto" my="2rem" justify="space-between" width="100%">
