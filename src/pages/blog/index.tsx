@@ -24,14 +24,13 @@ interface BlogProps {
 }
 
 function Blog({ articles }: BlogProps) {
-    console.log(articles)
     const cards = articles.map((elm: BlogType & MicroCMSListContent) => (
         <ArticleCard
             key={elm.id}
             title={elm.title}
             tag={elm.category.map((cat: CategoryType & MicroCMSListContent) => cat.name)}
             to={`/blog/${elm.id}`}
-            thumbnail={elm.thumbnail.url}
+            thumbnail={elm.thumbnail?elm.thumbnail.url:"/404.png"}
             publish={elm.publishedAt.split('T')[0]}
             revised={elm.revisedAt.split('T')[0]}
         />
