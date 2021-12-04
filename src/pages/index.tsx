@@ -18,7 +18,7 @@ export default function Home() {
           <chakra.h1 fontFamily={"Fjalla One"} pointerEvents="none" fontSize={"4rem"} textAlign='center' >fluixyz</chakra.h1>
           <Divider />
           <VStack fontSize="1.5rem" spacing="2rem" >
-            <Link href="/blog">blog</Link>
+            <Link href="/blog/page/1">blog</Link>
             <Link href="/works">works</Link>
             <Link href="https://github.com/fluixyz-unnatural">github</Link>
             <Link href="https://twitter.com/higara333">twitter</Link>
