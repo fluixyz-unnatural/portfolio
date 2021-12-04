@@ -11,7 +11,8 @@ interface Props {
 
 function ArticleCard(props: Props) {
     return (
-        <Box shadow="base" borderRadius={10} overflow="hidden" width="full" p={"1rem"}>
+        <Box shadow="base" borderRadius={10} overflow="hidden" width="full" p={"1rem"} transition="0.2s" _hover={{ background: "#f8f8f6" }
+        }>
             <HStack as={Link} href={props.to} >
                 <VStack align="left" textAlign="left" w="full">
                     <Heading size="md">{props.title}</Heading>
@@ -28,7 +29,7 @@ function ArticleCard(props: Props) {
                 </VStack>
                 <Image boxSize="100px" objectFit="cover" src={props.thumbnail} alt="thumbnail" />
             </HStack>
-        </Box>
+        </Box >
     )
 }
 
