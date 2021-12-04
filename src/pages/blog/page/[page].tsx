@@ -70,7 +70,7 @@ const Page = (props: PageProps) => {
             </Head>
             <BlogHeader />
             <Box >
-                <VStack maxW="630px" m="auto" >
+                <VStack maxW="630px" m="auto" spacing={4} >
                     {cards}
                 </VStack>
                 <HStack maxW="630px" m="auto" my="2rem" justify="space-between" width="100%">
