@@ -69,7 +69,7 @@ const Page = (props: PageProps) => {
                 <meta name="og:title" content="fluixyz's log"></meta>
             </Head>
             <BlogHeader />
-            <Box p="1rem">
+            <Box >
                 <VStack maxW="630px" m="auto" >
                     {cards}
                 </VStack>
