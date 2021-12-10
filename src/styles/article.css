@@ -1,7 +1,7 @@
 .blog-article h3 {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-top: 2.0rem;
+  margin-top: 2rem;
   margin-bottom: 1.2rem;
   border-left: 5px solid #000;
   background: #f4f4f4;
@@ -28,4 +28,17 @@
 .blog-article img {
   margin: 1rem auto;
   width: 95%;
+}
+
+.blog-article blockquote {
+  background: rgb(240, 240, 240);
+  padding: 1rem;
+  width: 85%;
+  margin: auto;
+  border-left: 5px rgb(155, 155, 155) solid;
+}
+blockquote a {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
 }
