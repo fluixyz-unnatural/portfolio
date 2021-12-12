@@ -1,8 +1,9 @@
 import Head from "next/head"
-import { Box, VStack, HStack, IconButton } from "@chakra-ui/react"
+import { Box, VStack, HStack, IconButton, useBreakpointValue } from "@chakra-ui/react"
 import { ArrowLeftIcon, ArrowRightIcon, ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
-import BlogHeader from "src/components/blogHeader"
-import ArticleCard from "src/components/articleCard"
+import BlogHeader from "src/components/BlogHeader"
+import ArticleCard from "src/components/ArticleCard"
+import Profile from "src/components/Profile"
 import { MicroCMSListContent } from "microcms-js-sdk"
 import { BlogType, CategoryType } from "src/types/microcms"
 import { useRouter } from "next/router"
@@ -51,6 +52,7 @@ const Page = (props: PageProps) => {
             revised={elm.revisedAt.split('T')[0]}
         />
     ))
+    const isDesktop = useBreakpointValue({base:false,md:true})
     const router = useRouter()
     const routePage = (offset: number) => {
         let to = props.page + offset
@@ -69,15 +71,18 @@ const Page = (props: PageProps) => {
                 <meta name="og:title" content="fluixyz's log"></meta>
             </Head>
             <BlogHeader />
-            <Box >
-                <VStack maxW="630px" m="auto" spacing={4} >
-                    {cards}
-                </VStack>
-                <HStack maxW="630px" m="auto" my="2rem" justify="space-between" width="100%">
-                    <IconButton onClick={() => { routePage(-99999) }} isDisabled={props.page == 1} w="100%" aria-label="first" icon={<ArrowLeftIcon />} />
-                    <IconButton onClick={() => { routePage(-1) }} isDisabled={props.page == 1} w="100%" aria-label="previous" icon={<ChevronLeftIcon />} />
-                    <IconButton onClick={() => { routePage(1) }} isDisabled={props.page == props.count} w="100%" aria-label="next" icon={<ChevronRightIcon />} />
-                    <IconButton onClick={() => { routePage(99999) }} isDisabled={props.page == props.count} w="100%" aria-label="last" icon={<ArrowRightIcon />} />
+            <Box width={["100%","80%"]} maxW="1280px" margin="auto" >
+                <HStack align="start" justify={"center"} spacing={4}>
+                    <VStack maxW="630px" spacing={4} >
+                        {cards}
+                        <HStack maxW="630px" m="auto" mb="2rem" justify="space-between" width="100%" pb="30px">
+                            <IconButton onClick={() => { routePage(-99999) }} isDisabled={props.page == 1} w="100%" aria-label="first" icon={<ArrowLeftIcon />} />
+                            <IconButton onClick={() => { routePage(-1) }} isDisabled={props.page == 1} w="100%" aria-label="previous" icon={<ChevronLeftIcon />} />
+                            <IconButton onClick={() => { routePage(1) }} isDisabled={props.page == props.count} w="100%" aria-label="next" icon={<ChevronRightIcon />} />
+                            <IconButton onClick={() => { routePage(99999) }} isDisabled={props.page == props.count} w="100%" aria-label="last" icon={<ArrowRightIcon />} />
+                        </HStack>
+                    </VStack>
+                    {isDesktop?<Profile />:""}
                 </HStack>
             </Box>
         </>

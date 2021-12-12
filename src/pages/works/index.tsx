@@ -1,7 +1,7 @@
 import { Wrap } from "@chakra-ui/layout";
 import Head from "next/head";
-import WorkCard from "src/components/workCard";
-import WorksHeader from "src/components/worksHeader";
+import WorkCard from "src/components/WorkCard";
+import WorksHeader from "src/components/WorksHeader";
 import { client } from "src/libs/client";
 import { WorkType } from "src/types/microcms";
 

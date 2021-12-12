@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Heading, Text, VStack, HStack } from "@chakra-ui/react"
 import { client } from "../../libs/client"
-import BlogHeader from "src/components/blogHeader"
+import BlogHeader from "src/components/BlogHeader"
 import { MicroCMSListContent } from "microcms-js-sdk"
 import { BlogType, MicroCMSIdsList, IdObject } from "src/types/microcms"
 import Head from "next/head"
