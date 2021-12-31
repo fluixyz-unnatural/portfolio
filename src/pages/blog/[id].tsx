@@ -9,7 +9,7 @@ import Head from "next/head"
 export const getStaticPaths = async () => {
     const data: MicroCMSIdsList = await client.get({
         endpoint: 'article',
-        queries: { fields: 'id' }
+        queries: { fields: 'id', limit: 1000 }
     })
     const paths = data.contents.map((elm: IdObject) => '/blog/' + elm.id)
     return { paths, fallback: false }
