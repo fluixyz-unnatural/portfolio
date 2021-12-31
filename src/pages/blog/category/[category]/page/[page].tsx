@@ -27,7 +27,7 @@ export const getStaticPaths = async () => {
             }
         })
         const cnt = articles.totalCount % 10 > 0 ? articles.totalCount /10 + 1 : articles.totalCount / 10
-        for(let j=0;j<=cnt;j++)paths.push(`/blog/category/${category.id}/page/${j}`)
+        for(let j=1;j<=cnt;j++)paths.push(`/blog/category/${category.id}/page/${j}`)
 
     }
     console.log(paths)
