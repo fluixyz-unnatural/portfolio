@@ -103,7 +103,7 @@ const Page = (props: PageProps) => {
             <BlogHeader />
             <Box width={["100%","80%"]} maxW="1280px" margin="auto" >
                 <HStack align="start" justify={"center"} spacing={4}>
-                    <VStack maxW="630px" spacing={4} >
+                    <VStack maxW="630px" spacing={4} width="100%" >
                         {cards}
                         <HStack maxW="630px" m="auto" mb="2rem" justify="space-between" width="100%" pb="30px">
                             <IconButton onClick={() => { routePage(-99999) }} isDisabled={props.page == 1} w="100%" aria-label="first" icon={<ArrowLeftIcon />} />
