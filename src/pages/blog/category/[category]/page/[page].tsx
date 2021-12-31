@@ -26,7 +26,6 @@ export const getStaticPaths = async () => {
                 limit: 1000, filters: `category[contains]${category.id}`, fields: 'id'
             }
         })
-        console.log(articles)
         const cnt = articles.totalCount % 10 > 0 ? articles.totalCount /10 + 1 : articles.totalCount / 10
         for(let j=0;j<=cnt;j++)paths.push(`/blog/category/${category.id}/page/${j}`)
 
@@ -45,6 +44,10 @@ interface staticProps {
 
 export const getStaticProps = async ({ params }: staticProps) => {
     const data = await client
+    console.log({
+        endpoint: 'article',
+        queries: {limit: 10, orders: '-createdAt', offset: (Number(params.page) - 1) * 10, filters: 'category[contains]diary'}
+      })
     .get({
       endpoint: 'article',
       queries: {limit: 10, orders: '-createdAt', offset: (Number(params.page) - 1) * 10, filters: 'category[contains]diary'}
