@@ -1,6 +1,7 @@
 import { MicroCMSImage, MicroCMSListContent } from "microcms-js-sdk";
 
 export interface CategoryType {
+    id: string,
     name: string
 }
 

@@ -52,7 +52,7 @@ const Page = (props: PageProps) => {
         <ArticleCard
             key={elm.id}
             title={elm.title}
-            tag={elm.category.map((cat: CategoryType & MicroCMSListContent) => cat.name)}
+            tag={elm.category.map((cat: CategoryType & MicroCMSListContent) => {return {id: cat.id,name:cat.name}})}
             to={`/blog/${elm.id}`}
             thumbnail={elm.thumbnail ? elm.thumbnail.url : "/404.png"}
             publish={elm.publishedAt.split('T')[0]}
