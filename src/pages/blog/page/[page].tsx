@@ -20,7 +20,14 @@ export const getStaticPaths = async () => {
     return ({ paths, fallback: false })
 }
 
-export const getStaticProps = async ({ params }: any) => {
+interface staticPropsParams {
+    page: number;
+}
+interface staticProps {
+    params: staticPropsParams;
+}
+
+export const getStaticProps = async ({ params }: staticProps) => {
     const data = await client.get({
         endpoint: 'article',
         queries: { limit: 10, orders: '-createdAt', offset: (Number(params.page) - 1) * 10 }
@@ -45,7 +52,7 @@ const Page = (props: PageProps) => {
         <ArticleCard
             key={elm.id}
             title={elm.title}
-            tag={elm.category.map((cat: CategoryType & MicroCMSListContent) => cat.name)}
+            tag={elm.category.map((cat: CategoryType & MicroCMSListContent) => {return {id: cat.id,name:cat.name}})}
             to={`/blog/${elm.id}`}
             thumbnail={elm.thumbnail ? elm.thumbnail.url : "/404.png"}
             publish={elm.publishedAt.split('T')[0]}

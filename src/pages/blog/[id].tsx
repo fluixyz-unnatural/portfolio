@@ -15,15 +15,14 @@ export const getStaticPaths = async () => {
     return { paths, fallback: false }
 }
 
-// TODO わからんぴ
-interface nani {
+interface staticPropsParams {
     id: string;
 }
-interface nanikore {
-    params: nani;
+interface staticProps {
+    params: staticPropsParams;
 }
 
-export const getStaticProps = async ({ params }: nanikore) => {
+export const getStaticProps = async ({ params }: staticProps) => {
     const data = await client.get({
         endpoint: 'article',
         queries: { ids: params.id }
