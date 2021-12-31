@@ -20,7 +20,14 @@ export const getStaticPaths = async () => {
     return ({ paths, fallback: false })
 }
 
-export const getStaticProps = async ({ params }: any) => {
+interface staticPropsParams {
+    page: number;
+}
+interface staticProps {
+    params: staticPropsParams;
+}
+
+export const getStaticProps = async ({ params }: staticProps) => {
     const data = await client.get({
         endpoint: 'article',
         queries: { limit: 10, orders: '-createdAt', offset: (Number(params.page) - 1) * 10 }
