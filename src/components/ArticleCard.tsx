@@ -1,6 +1,6 @@
 import { Box, VStack, HStack, Image, Divider, Heading, Text, Link } from "@chakra-ui/react"
 import { TimeIcon, RepeatClockIcon } from "@chakra-ui/icons"
-import { CategoryType } from 'src/types/mirocms.d.ts'
+import { CategoryType } from 'src/types/microcms'
 interface Props {
     title: string;
     tag: Array<CategoryType>;
