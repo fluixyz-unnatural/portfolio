@@ -50,7 +50,7 @@ export const getStaticProps = async ({ params }: staticProps) => {
     const data = await client
     .get({
       endpoint: 'article',
-      queries: {limit: 10, orders: '-createdAt', offset: (Number(params.page) - 1) * 10, filters: 'category[contains]diary'}
+      queries: {limit: 10, orders: '-createdAt', offset: (Number(params.page) - 1) * 10, filters: `category[contains]${params.category}`}
     })
 
     return ({
