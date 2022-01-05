@@ -50,7 +50,7 @@ function Article({ article }: Props) {
                 <meta name="og:title" content={`${article.title} | fluixyz'log`} />
             </Head>
             <BlogHeader />
-            <Box mt={10} maxW="630px" m="auto" >
+            <Box mt={10} maxW="630px" m="auto" mb={16} >
                 <VStack align="flex-start" spacing="2rem" m="20px">
                     <Box>
                         <Heading mb="1rem" fontSize="1.6rem" textAlign="left">
