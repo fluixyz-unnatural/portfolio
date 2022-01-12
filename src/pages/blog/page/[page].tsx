@@ -30,7 +30,7 @@ interface staticProps {
 export const getStaticProps = async ({ params }: staticProps) => {
     const data = await client.get({
         endpoint: 'article',
-        queries: { limit: 10, orders: '-createdAt', offset: (Number(params.page) - 1) * 10 }
+        queries: { limit: 10, orders: '-publishedAt', offset: (Number(params.page) - 1) * 10 }
     })
     return ({
         props: {
