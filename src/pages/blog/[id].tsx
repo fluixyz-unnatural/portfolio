@@ -8,10 +8,15 @@ import Head from 'next/head'
 import TweetButton from 'src/components/TweetButton'
 
 export const getStaticPaths = async () => {
-  const data: MicroCMSIdsList = await client.get({
-    endpoint: 'article',
-    queries: { fields: 'id', limit: 1000 },
-  })
+  const data: MicroCMSIdsList = await client
+    .get({
+      endpoint: 'article',
+      queries: { fields: 'id', limit: 1000 },
+    })
+    .catch((err) => {
+      console.log(err)
+      console.log(err.message)
+    })
   const paths = data.contents.map((elm: IdObject) => '/blog/' + elm.id)
   return { paths, fallback: false }
 }
@@ -77,7 +82,7 @@ function Article({ article }: Props) {
               }}
             />
           </Box>
-          <HStack justify={'end'} w={"full"} px={4}>
+          <HStack justify={'end'} w={'full'} px={4}>
             <TweetButton />
           </HStack>
         </VStack>
