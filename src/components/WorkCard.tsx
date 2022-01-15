@@ -24,7 +24,7 @@ const WorkCard = (props: Props) => {
         w={['100%', 'sm']}
         maxW={'100%'}
         borderWidth={props.confidence > 50 ? '5px' : '1px'}
-        borderColor={props.confidence > 50 ? 'purple.400' : 'gray.400'}
+        borderColor={props.confidence > 50 ? 'teal.400' : 'gray.400'}
         borderRadius="lg"
         overflow="hidden"
       >
