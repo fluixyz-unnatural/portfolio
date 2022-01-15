@@ -34,4 +34,5 @@ export interface WorkType {
     tags:Array<TechsType & MicroCMSListContent>
     thumbnail:MicroCMSImage
     blog: IdObject
+    confidence:number
 }
