@@ -1,12 +1,5 @@
-import {
-  Box,
-  Link,
-  Text,
-  Image,
-  Heading,
-  HStack,
-  Badge,
-} from '@chakra-ui/react'
+import { Box, Link, Text, Heading, HStack, Badge } from '@chakra-ui/react'
+import Image from 'next/image'
 
 interface Props {
   title: string
@@ -32,9 +25,9 @@ const WorkCard = (props: Props) => {
           <Image
             src={props.thumbnail}
             alt="thumbnail"
-            w="full"
-            h={48}
-            objectFit="cover"
+            width={360}
+            height={220}
+            layout="responsive"
           />
           <Box p={5}>
             <Heading mb={2} size="md">
