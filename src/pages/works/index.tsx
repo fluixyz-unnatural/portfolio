@@ -69,7 +69,7 @@ const Works = ({ works }: WorkProps) => {
           </ListItem>
         </List>
       </Box>
-      <Wrap maxW="1280px" p={3} spacing={3} m="auto" justify="center">
+      <Wrap maxW="1280px" p={3} spacing={3} m="auto" justify="center" mb={16}>
         {cards}
       </Wrap>
     </>

@@ -1,4 +1,5 @@
-import { Box, VStack, HStack, Image, Divider, Heading, Text, Link } from "@chakra-ui/react"
+import { Box, VStack, HStack, Heading, Text, Link } from "@chakra-ui/react"
+import Image from 'next/image'
 import { TimeIcon, RepeatClockIcon } from "@chakra-ui/icons"
 import { CategoryType } from 'src/types/microcms'
 interface Props {
@@ -30,7 +31,7 @@ function ArticleCard(props: Props) {
                 </VStack>
                 <Box width={"130px"}>
                     <Link>
-                        <Image boxSize="100px" objectFit="cover" src={props.thumbnail} alt="thumbnail" />
+                        <Image width="100" height="100" objectFit="cover" src={props.thumbnail} alt="thumbnail" />
                     </Link>
                 </Box>
             </HStack>
