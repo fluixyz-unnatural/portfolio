@@ -58,8 +58,8 @@ function Article({ article }: Props) {
         <div className="article-header">
           <h2>{article.title}</h2>
           <div className="article-date">
-            <div>published: {article.publishedAt.split('T')[0]}</div>
-            <div>revised: {article.revisedAt.split('T')[0]}</div>
+            <div>published: {article.publishedAt?.split('T')[0]}</div>
+            <div>revised: {article.revisedAt?.split('T')[0]}</div>
           </div>
           <div>カテゴリ: {article.category.map((elm: any) => elm.name)}</div>
         </div>

@@ -64,8 +64,8 @@ const Page = (props: PageProps) => {
       })}
       to={`/blog/${elm.id}`}
       thumbnail={elm.thumbnail ? elm.thumbnail.url : '/404.png'}
-      publish={elm.publishedAt.split('T')[0]}
-      revised={elm.revisedAt.split('T')[0]}
+      publish={elm.publishedAt?.split('T')[0]!}
+      revised={elm.revisedAt?.split('T')[0]!}
     />
   ))
   const router = useRouter()
