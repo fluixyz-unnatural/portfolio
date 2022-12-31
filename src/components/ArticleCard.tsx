@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { TimeIcon, RepeatClockIcon } from '@chakra-ui/icons'
 import { CategoryType } from 'src/types/microcms'
 interface Props {
   title: string
@@ -21,15 +20,11 @@ function ArticleCard(props: Props) {
           </a>
         </Link>
         <div className={'flex'}>
-          <TimeIcon />
-          <p>{props.publish}</p>
+          <p>published: {props.publish}</p>
           {props.publish == props.revised ? (
             <p></p>
           ) : (
-            <>
-              <RepeatClockIcon />
-              <p> {props.revised}</p>
-            </>
+            <p>revised: {props.revised}</p>
           )}
         </div>
         <div className="flex">
