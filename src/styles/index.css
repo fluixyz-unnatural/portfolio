@@ -104,22 +104,19 @@ main {
 }
 
 .sub-header {
-  margin-top: 1.5 rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
   padding: 2rem;
   font-family: 'Fjalla One';
   user-select: none;
   text-align: center;
   width: 100%;
+  margin-top: 1rem;
 }
 
-.sub-header > * {
-  margin-top: 2rem;
-}
 
 .sub-header h1 {
   overflow: hidden;
-  height: 96px;
+  height: 76.797px;
 }
 
 .focus-dummy {
