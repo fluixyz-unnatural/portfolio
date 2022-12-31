@@ -36,13 +36,17 @@ function ArticleCard(props: Props) {
           ))}
         </div>
       </div>
-      <Image
-        width="100"
-        height="100"
-        objectFit="cover"
-        src={props.thumbnail}
-        alt="thumbnail"
-      />
+      <div className="image-wrapper">
+        <Image
+          width="100"
+          height="100"
+          objectFit="cover"
+          src={props.thumbnail}
+          quality={75}
+          alt="thumbnail"
+          layout="fixed"
+        />
+      </div>
     </div>
   )
 }

@@ -18,9 +18,10 @@ const WorkCard = (props: Props) => {
           <Image
             src={props.thumbnail}
             alt="thumbnail"
-            width={360}
-            height={220}
-            layout="responsive"
+            width="360"
+            height="220"
+            quality={75}
+            layout="fixed"
           />
           <div>
             <h3>{props.title}</h3>
