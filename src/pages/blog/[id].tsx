@@ -56,37 +56,24 @@ function Article({ article }: Props) {
         <meta name="og:title" content={`${article.title} | fluixyz'log`} />
       </Head>
       <BlogHeader />
-      <Box mt={10} maxW="630px" m="auto" mb={16}>
-        <VStack align="flex-start" spacing="2rem" m="20px">
-          <Box>
-            <Heading mb="1rem" fontSize="1.6rem" textAlign="left">
-              {article.title}
-            </Heading>
-            <HStack>
-              <Text fontSize="sm">
-                published: {article.publishedAt.split('T')[0]}
-              </Text>
-              <Text fontSize="sm">
-                revised: {article.revisedAt.split('T')[0]}
-              </Text>
-              <Text fontSize="sm">
-                カテゴリ: {article.category.map((elm: any) => elm.name)}
-              </Text>
-            </HStack>
-          </Box>
-          <Box>
-            <div
-              className="blog-article"
-              dangerouslySetInnerHTML={{
-                __html: `${article.article}`,
-              }}
-            />
-          </Box>
-          <HStack justify={'end'} w={'full'} px={4}>
-            <TweetButton />
-          </HStack>
-        </VStack>
-      </Box>
+      <article className="article-page">
+        <div className="article-header">
+          <h2>{article.title}</h2>
+          <div className="article-date">
+            <div>published: {article.publishedAt.split('T')[0]}</div>
+            <div>revised: {article.revisedAt.split('T')[0]}</div>
+          </div>
+          <div>カテゴリ: {article.category.map((elm: any) => elm.name)}</div>
+        </div>
+        <div>
+          <div
+            className="blog-article"
+            dangerouslySetInnerHTML={{
+              __html: `${article.article}`,
+            }}
+          />
+        </div>
+      </article>
     </>
   )
 }

@@ -6,6 +6,7 @@ import '../styles/index.css'
 import 'src/styles/article.css'
 import 'src/styles/top.css'
 import 'src/styles/blog.css'
+import 'src/styles/works.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

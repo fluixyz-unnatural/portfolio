@@ -56,3 +56,23 @@
   place-items: center;
   gap: 0.25rem;
 }
+
+/* article misc */
+.article-header {
+  padding-bottom: 1rem;
+  border-bottom: solid var(--base-text) 1px;;
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+.article-header h2 {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+.article-date {
+  display: flex;
+  gap: 1rem;
+}
+.article-page {
+  max-width: 630px;
+  margin: 0 auto;
+}

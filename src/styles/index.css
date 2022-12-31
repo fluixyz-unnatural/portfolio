@@ -4,20 +4,24 @@
   --base-text: #222;
   --sub-text: #444;
 
+  --a-color: rgb(0, 99, 156);
+
   --dim-border: #ddd;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --base-background: #223;
-    --sub-background: #444;
+    --sub-background: #445;
     --base-text: #eee;
-    --sub-text: #ddd;
+    --sub-text: #ccc;
+
+    --a-color: rgb(70, 158, 209);
 
     --dim-border: #666;
   }
 }
 
-* {
+:root {
   background: var(--base-background);
   color: var(--base-text);
 }
