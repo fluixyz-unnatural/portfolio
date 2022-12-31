@@ -1,0 +1,30 @@
+:root {
+  --base-background: #fff;
+  --sub-background: #eee;
+  --base-text: #222;
+  --sub-text: #444;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --base-background: #222;
+    --sub-background: #444;
+    --base-text: #fff;
+    --sub-text: #eee;
+  }
+}
+
+:root {
+  background: var(--base-background);
+  color: var(--base-text);
+}
+
+.footer {
+  width: 100%;
+  background: var(--sub-background);
+  color: var(--sub-text);
+  text-align: center;
+  height: 120px;
+  position: absolute;
+  bottom: 0;
+  line-height: 120px;
+}

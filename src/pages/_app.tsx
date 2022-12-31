@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { ChakraProvider, Link } from '@chakra-ui/react'
 import '../styles/article.css'
+import '../styles/index.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -31,17 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           }}
         >
           <Component {...pageProps} />
-          <footer
-            style={{
-              width: '100%',
-              background: '#eeeeee',
-              textAlign: 'center',
-              height: '120px',
-              position: 'absolute',
-              bottom: 0,
-              lineHeight: '120px',
-            }}
-          >
+          <footer className="footer">
             <Link href="/">fluixyz</Link>
           </footer>
         </div>
