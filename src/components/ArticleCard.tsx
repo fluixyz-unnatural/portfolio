@@ -14,10 +14,8 @@ function ArticleCard(props: Props) {
   return (
     <div className={'article-card'}>
       <div>
-        <Link href={props.to}>
-          <a>
+        <Link passHref href={props.to}>
             <h3>{props.title}</h3>
-          </a>
         </Link>
         <div className={'flex'}>
           <p>published: {props.publish}</p>

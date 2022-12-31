@@ -12,23 +12,21 @@ interface Props {
 
 const WorkCard = (props: Props) => {
   return (
-    <Link href={`/blog/${props.blog}`}>
-      <a>
-        <div className="works-card">
-          <Image
-            src={props.thumbnail}
-            alt="thumbnail"
-            width="360"
-            height="220"
-            quality={75}
-            layout="fixed"
-          />
-          <div>
-            <h3>{props.title}</h3>
-            <p>{props.summary}</p>
-          </div>
+    <Link passHref href={`/blog/${props.blog}`}>
+      <div className="works-card">
+        <Image
+          src={props.thumbnail}
+          alt="thumbnail"
+          width="360"
+          height="220"
+          quality={75}
+          layout="fixed"
+        />
+        <div>
+          <h3>{props.title}</h3>
+          <p>{props.summary}</p>
         </div>
-      </a>
+      </div>
     </Link>
   )
 }
