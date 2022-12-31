@@ -1,12 +1,8 @@
-import { Heading, Divider, Link } from "@chakra-ui/react";
+import Link from 'next/link'
+import SubHeader from './SubHeader'
 
 const WorksHeader = () => {
-    return (
-        <Link href="/works" >
-            <Heading fontFamily={"Fjalla One"} p="2rem" textAlign="center">{"fluixyz's works"}</Heading>
-            <Divider mb="2rem" />
-        </Link>
-    )
+  return <SubHeader label="fluixyz' works" href="/works" />
 }
 
-export default WorksHeader;
+export default WorksHeader

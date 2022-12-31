@@ -3,8 +3,8 @@
   font-weight: bold;
   margin-top: 2rem;
   margin-bottom: 1.2rem;
-  border-left: 5px solid #000;
-  background: #f4f4f4;
+  border-left: 5px solid var(--sub-text);
+  background: var(--sub-background);
   padding: 0.5rem 1.2rem;
 }
 .blog-article p {
@@ -14,7 +14,7 @@
 }
 
 .blog-article a {
-  color: rgb(0, 99, 156);
+  color: var(--a-color);
   text-decoration: underline;
 }
 
@@ -31,13 +31,13 @@
 }
 
 .blog-article blockquote {
-  background: rgb(240, 240, 240);
+  background: var(--sub-background);
   padding: 1rem;
   width: 85%;
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  border-left: 5px rgb(155, 155, 155) solid;
+  border-left: 5px var(--sub-text) solid;
 }
 blockquote a {
   display: inline-block;

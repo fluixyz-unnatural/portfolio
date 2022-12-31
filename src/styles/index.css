@@ -1,0 +1,123 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --base-background: #fff;
+  --sub-background: #eee;
+  --base-text: #222;
+  --sub-text: #444;
+
+  --a-color: rgb(0, 99, 156);
+
+  --dim-border: #ddd;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --base-background: #223;
+    --sub-background: #445;
+    --base-text: #eee;
+    --sub-text: #ccc;
+
+    --a-color: rgb(70, 158, 209);
+
+    --dim-border: #666;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--base-text);
+}
+
+:root {
+  background: var(--base-background);
+  color: var(--base-text);
+}
+
+main {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+}
+
+.footer {
+  width: 100%;
+  border-top: solid var(--dim-border) 1px;
+  box-sizing: content-box;
+  color: var(--sub-text);
+  text-align: center;
+  height: 120px;
+  position: absolute;
+  bottom: 0;
+  line-height: 120px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--base-text);
+}
+
+.sub-header {
+  margin-top: 1.5 rem;
+  font-size: 2rem;
+  padding: 2rem;
+  font-family: 'Fjalla One';
+  user-select: none;
+  text-align: center;
+}
+
+.sub-header > * {
+  margin-top: 2rem;
+}
+
+.focus-dummy {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}

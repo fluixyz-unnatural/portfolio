@@ -1,12 +1,5 @@
-import { Heading, Divider, Link } from "@chakra-ui/react";
+import SubHeader from './SubHeader'
 
-const BlogHeader = () => {
-    return (
-        <Link href="/blog/page/1" >
-            <Heading fontFamily={"Fjalla One"} p="2rem" textAlign="center">{"fluixyz's log"}</Heading>
-            <Divider mb="2rem" />
-        </Link>
-    )
-}
+const BlogHeader = () => <SubHeader href="/blog/page/1" label="fluixyz' log" />
 
-export default BlogHeader;
+export default BlogHeader
