@@ -15,9 +15,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     router.events.on('routeChangeComplete', (e) => {
       if (mumumu.current) {
-        console.log('hoge')
         mumumu.current.focus()
-        // mumumu.current.blur()
+        mumumu.current.blur()
       }
     })
   }, [router])
