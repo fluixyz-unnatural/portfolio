@@ -11,12 +11,12 @@ import { useEffect, useRef } from 'react'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
-  const mumumu = useRef<HTMLDivElement>(null)
+  const focusDummy = useRef<HTMLDivElement>(null)
   useEffect(() => {
     router.events.on('routeChangeComplete', (e) => {
-      if (mumumu.current) {
-        mumumu.current.focus()
-        mumumu.current.blur()
+      if (focusDummy.current) {
+        focusDummy.current.focus()
+        focusDummy.current.blur()
       }
     })
   }, [router])
@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             gtag('config', 'G-WFQ64DF55H');
           `}
       </Script>
-      <div ref={mumumu} className="hoge" tabIndex={-1}>
+      <div ref={focusDummy} className="focus-dummy" tabIndex={-1}>
         focus
       </div>
       <main>
