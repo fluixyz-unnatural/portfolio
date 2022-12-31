@@ -1,14 +1,6 @@
 import Head from 'next/head'
-import { Box, VStack, HStack, useBreakpointValue } from '@chakra-ui/react'
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from '@chakra-ui/icons'
 import BlogHeader from 'src/components/BlogHeader'
 import ArticleCard from 'src/components/ArticleCard'
-import Profile from 'src/components/Profile'
 import { MicroCMSListContent } from 'microcms-js-sdk'
 import { BlogType, CategoryType } from 'src/types/microcms'
 import { useRouter } from 'next/router'
