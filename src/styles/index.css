@@ -3,6 +3,8 @@
   --sub-background: #eee;
   --base-text: #222;
   --sub-text: #444;
+
+  --dim-border: #ddd;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -10,6 +12,8 @@
     --sub-background: #444;
     --base-text: #fff;
     --sub-text: #eee;
+
+    --dim-border: #666;
   }
 }
 
@@ -18,9 +22,17 @@
   color: var(--base-text);
 }
 
+main {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+}
+
 .footer {
   width: 100%;
-  background: var(--sub-background);
+  border-top: solid var(--dim-border) 1px;
+  box-sizing: content-box;
   color: var(--sub-text);
   text-align: center;
   height: 120px;

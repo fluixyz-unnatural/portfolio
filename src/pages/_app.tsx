@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
-import Head from 'next/head'
+import Link from 'next/link'
 import Script from 'next/script'
-import { ChakraProvider, Link } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import '../styles/article.css'
 import '../styles/index.css'
 
@@ -23,19 +23,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           `}
       </Script>
       <ChakraProvider>
-        <div
-          style={{
-            minHeight: '100vh',
-            position: 'relative',
-            paddingBottom: '120px',
-            boxSizing: 'border-box',
-          }}
-        >
+        <main>
           <Component {...pageProps} />
           <footer className="footer">
             <Link href="/">fluixyz</Link>
           </footer>
-        </div>
+        </main>
       </ChakraProvider>
     </>
   )
