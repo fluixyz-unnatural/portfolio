@@ -8,16 +8,16 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --base-background: #222;
+    --base-background: #223;
     --sub-background: #444;
-    --base-text: #fff;
-    --sub-text: #eee;
+    --base-text: #eee;
+    --sub-text: #ddd;
 
     --dim-border: #666;
   }
 }
 
-:root {
+* {
   background: var(--base-background);
   color: var(--base-text);
 }
