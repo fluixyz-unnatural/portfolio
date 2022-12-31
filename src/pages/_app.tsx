@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import '../styles/index.css'
 import 'src/styles/article.css'
 import 'src/styles/top.css'
+import 'src/styles/blog.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
