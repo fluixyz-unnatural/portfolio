@@ -20,7 +20,6 @@ const WorkCard = (props: Props) => {
           width="360"
           height="220"
           quality={75}
-          layout="fixed"
         />
         <div>
           <h3>{props.title}</h3>

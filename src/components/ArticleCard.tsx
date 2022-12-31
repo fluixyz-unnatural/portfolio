@@ -38,7 +38,6 @@ function ArticleCard(props: Props) {
         <Image
           width="100"
           height="100"
-          objectFit="cover"
           src={props.thumbnail}
           quality={75}
           alt="thumbnail"

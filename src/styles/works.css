@@ -16,6 +16,10 @@
   overflow: hidden;
 }
 
+.works-card img {
+  object-fit: cover;
+}
+
 .works-card > div {
   padding: 1rem;
   display: flex;
