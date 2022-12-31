@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
 import Head from 'next/head'
-import { Box, Divider, VStack, HStack, chakra, Link } from "@chakra-ui/react"
+import Link from 'next/link'
+import { Box, Divider, VStack, chakra } from '@chakra-ui/react'
 
 export default function Home() {
   return (
@@ -9,22 +10,33 @@ export default function Home() {
         <title>fluixyz</title>
         <meta name="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
-        <meta name="description" content="fluixyzのブログ兼ポートフォリオサイトです。"></meta>
-        <meta name="og:description" content="fluixyzのブログ兼ポートフォリオサイトです。"></meta>
+        <meta
+          name="description"
+          content="fluixyzのブログ兼ポートフォリオサイトです。"
+        ></meta>
+        <meta
+          name="og:description"
+          content="fluixyzのブログ兼ポートフォリオサイトです。"
+        ></meta>
         <meta name="og:title" content="fluixyz"></meta>
       </Head>
-      <Box p={[10,20]}>
-        <VStack h={["50vh"]} justify="space-between">
-          <chakra.h1 fontFamily={"Fjalla One"} pointerEvents="none" fontSize={"4rem"} textAlign='center' >fluixyz</chakra.h1>
-          <Divider />
-          <VStack fontSize="1.5rem" spacing="2rem" >
+      <section>
+        <h1 className="title-logo">fluixyz</h1>
+        <ul className="top-links">
+          <li>
             <Link href="/blog/page/1">blog</Link>
+          </li>
+          <li>
             <Link href="/works">works</Link>
+          </li>
+          <li>
             <Link href="https://github.com/fluixyz-unnatural">github</Link>
+          </li>
+          <li>
             <Link href="https://twitter.com/higara333">twitter</Link>
-          </VStack>
-        </VStack>
-      </Box>
+          </li>
+        </ul>
+      </section>
     </>
-  );
+  )
 }

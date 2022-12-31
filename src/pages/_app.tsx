@@ -2,8 +2,9 @@ import { AppProps } from 'next/app'
 import Link from 'next/link'
 import Script from 'next/script'
 import { ChakraProvider } from '@chakra-ui/react'
-import '../styles/article.css'
 import '../styles/index.css'
+import 'src/styles/article.css'
+import 'src/styles/top.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

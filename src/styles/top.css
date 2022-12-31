@@ -1,0 +1,18 @@
+.title-logo {
+  font-family: 'Fjalla One';
+  pointer-events: none;
+  font-size: 4rem;
+  text-align: center;
+  padding: 4rem;
+  border-bottom: solid var(--dim-border) 1px;
+}
+
+.top-links {
+  display: flex;
+  flex-flow: column;
+  place-items: center;
+  list-style: none;
+  font-size: 1.5rem;
+  gap: 1rem;
+  padding-top: 3rem;
+}
