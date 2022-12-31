@@ -1,10 +1,25 @@
 import { AppProps } from 'next/app'
-import Head from 'next/head'
+import Link from 'next/link'
 import Script from 'next/script'
-import { ChakraProvider, Link } from '@chakra-ui/react'
-import '../styles/article.css'
+import '../styles/index.css'
+import 'src/styles/article.css'
+import 'src/styles/top.css'
+import 'src/styles/blog.css'
+import 'src/styles/works.css'
+import { useRouter } from 'next/router'
+import { useEffect, useRef } from 'react'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+  const focusDummy = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    router.events.on('routeChangeComplete', (e) => {
+      if (focusDummy.current) {
+        focusDummy.current.focus()
+        focusDummy.current.blur()
+      }
+    })
+  }, [router])
   return (
     <>
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
@@ -21,31 +36,15 @@ function MyApp({ Component, pageProps }: AppProps) {
             gtag('config', 'G-WFQ64DF55H');
           `}
       </Script>
-      <ChakraProvider>
-        <div
-          style={{
-            minHeight: '100vh',
-            position: 'relative',
-            paddingBottom: '120px',
-            boxSizing: 'border-box',
-          }}
-        >
-          <Component {...pageProps} />
-          <footer
-            style={{
-              width: '100%',
-              background: '#eeeeee',
-              textAlign: 'center',
-              height: '120px',
-              position: 'absolute',
-              bottom: 0,
-              lineHeight: '120px',
-            }}
-          >
-            <Link href="/">fluixyz</Link>
-          </footer>
-        </div>
-      </ChakraProvider>
+      <div ref={focusDummy} className="focus-dummy" tabIndex={-1}>
+        focus
+      </div>
+      <main>
+        <Component {...pageProps} />
+        <footer className="footer">
+          <Link href="/">fluixyz</Link>
+        </footer>
+      </main>
     </>
   )
 }

@@ -1,11 +1,8 @@
-import { Wrap } from '@chakra-ui/layout'
-import { List, ListItem, ListIcon, Box } from '@chakra-ui/react'
 import Head from 'next/head'
 import WorkCard from 'src/components/WorkCard'
 import WorksHeader from 'src/components/WorksHeader'
 import { client } from 'src/libs/client'
 import { WorkType } from 'src/types/microcms'
-import { CheckIcon } from '@chakra-ui/icons'
 
 interface WorkResponse {
   contents: WorkType
@@ -53,25 +50,11 @@ const Works = ({ works }: WorkProps) => {
         <meta name="og:title" content="fluixyz's works"></meta>
       </Head>
       <WorksHeader />
-      <Box maxW="1000px" px={30} pb={5} m="auto" justify="center">
-        <List spacing={3} m="auto" align="left" w="240px">
-          <ListItem>
-            <ListIcon as={CheckIcon} color="teal.500" />
-            自信のある順で表示
-          </ListItem>
-          <ListItem>
-            <ListIcon as={CheckIcon} color="teal.500" />
-            枠付きは特に自信のあるもの
-          </ListItem>
-          <ListItem>
-            <ListIcon as={CheckIcon} color="teal.500" />
-            リンク先はブログ記事
-          </ListItem>
-        </List>
-      </Box>
-      <Wrap maxW="1280px" p={3} spacing={3} m="auto" justify="center" mb={16}>
+      <div
+        className="works-card-wrapper"
+      >
         {cards}
-      </Wrap>
+      </div>
     </>
   )
 }
