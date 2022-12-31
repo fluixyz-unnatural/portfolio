@@ -1,12 +1,13 @@
-import { Heading, Divider, Link } from "@chakra-ui/react";
+import Link from 'next/link'
 
 const BlogHeader = () => {
-    return (
-        <Link href="/blog/page/1" >
-            <Heading fontFamily={"Fjalla One"} p="2rem" textAlign="center">{"fluixyz's log"}</Heading>
-            <Divider mb="2rem" />
-        </Link>
-    )
+  return (
+    <Link href="/blog/page/1">
+      <a>
+        <h1 className={'blog-header'}>{"fluixyz's log"}</h1>
+      </a>
+    </Link>
+  )
 }
 
-export default BlogHeader;
+export default BlogHeader

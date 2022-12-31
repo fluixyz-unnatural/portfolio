@@ -28,3 +28,11 @@
 .blog-pagination > button:hover {
   background: var(--sub-background);
 }
+
+.blog-header {
+  font-size: 3rem;
+  padding: 2rem;
+  font-family: 'Fjalla One';
+  user-select: none;
+  text-align: center;
+}

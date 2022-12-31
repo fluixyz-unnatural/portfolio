@@ -122,6 +122,7 @@ const Page = (props: PageProps) => {
               routePage(-99999)
             }}
             disabled={props.page == 1}
+            aria-label="first"
           >
             {'|<'}
           </button>
@@ -138,6 +139,7 @@ const Page = (props: PageProps) => {
             onClick={() => {
               routePage(1)
             }}
+            aria-label="next"
             disabled={props.page == props.count}
           >
             {'>'}
@@ -146,6 +148,7 @@ const Page = (props: PageProps) => {
             onClick={() => {
               routePage(99999)
             }}
+            aria-label="last"
             disabled={props.page == props.count}
           >
             {'>|'}
