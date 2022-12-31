@@ -8,6 +8,7 @@ import 'src/styles/blog.css'
 import 'src/styles/works.css'
 import { useRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
+import GoogleTagManager from 'src/components/GoogleTagManager'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -22,20 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router])
   return (
     <>
-      {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-WFQ64DF55H"
-        strategy="afterInteractive"
-      ></Script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-WFQ64DF55H');
-          `}
-      </Script>
+      <GoogleTagManager googleTagManagerId="GTM-WMGB7PX" />
       <div ref={focusDummy} className="focus-dummy" tabIndex={-1}>
         focus
       </div>
