@@ -8,16 +8,15 @@ interface Props {
   to: string
   publish: string
   revised: string
+  firstView: boolean
 }
 
 function ArticleCard(props: Props) {
   return (
     <div className={'article-card'}>
       <div>
-        <Link href={props.to}>
-          <a>
-            <h3>{props.title}</h3>
-          </a>
+        <Link passHref href={props.to}>
+          <h2>{props.title}</h2>
         </Link>
         <div className={'flex'}>
           <p>published: {props.publish}</p>
@@ -38,13 +37,13 @@ function ArticleCard(props: Props) {
       </div>
       <div className="image-wrapper">
         <Image
+          priority={props.firstView}
+          loading={props.firstView ? 'eager' : 'lazy'}
           width="100"
           height="100"
-          objectFit="cover"
           src={props.thumbnail}
           quality={75}
           alt="thumbnail"
-          layout="fixed"
         />
       </div>
     </div>

@@ -28,7 +28,7 @@ interface WorkProps {
 }
 
 const Works = ({ works }: WorkProps) => {
-  const cards = works.map((elm: WorkType) => (
+  const cards = works.map((elm: WorkType, index: number) => (
     <WorkCard
       key={elm.id}
       title={elm.title}
@@ -37,6 +37,7 @@ const Works = ({ works }: WorkProps) => {
       tags={elm.tags.map((tag) => tag.name)}
       blog={elm.blog.id}
       confidence={elm.confidence}
+      firstView={index < 3}
     />
   ))
   return (
@@ -50,11 +51,7 @@ const Works = ({ works }: WorkProps) => {
         <meta name="og:title" content="fluixyz's works"></meta>
       </Head>
       <WorksHeader />
-      <div
-        className="works-card-wrapper"
-      >
-        {cards}
-      </div>
+      <div className="works-card-wrapper">{cards}</div>
     </>
   )
 }

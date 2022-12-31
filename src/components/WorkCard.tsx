@@ -8,27 +8,27 @@ interface Props {
   tags: Array<string>
   blog: string
   confidence: number
+  firstView: boolean
 }
 
 const WorkCard = (props: Props) => {
   return (
-    <Link href={`/blog/${props.blog}`}>
-      <a>
-        <div className="works-card">
-          <Image
-            src={props.thumbnail}
-            alt="thumbnail"
-            width="360"
-            height="220"
-            quality={75}
-            layout="fixed"
-          />
-          <div>
-            <h3>{props.title}</h3>
-            <p>{props.summary}</p>
-          </div>
+    <Link passHref href={`/blog/${props.blog}`}>
+      <div className="works-card">
+        <Image
+          src={props.thumbnail}
+          alt="thumbnail"
+          width="360"
+          height="220"
+          quality={75}
+          priority={props.firstView}
+          loading={props.firstView ? 'eager' : 'lazy'}
+        />
+        <div>
+          <h2>{props.title}</h2>
+          <p>{props.summary}</p>
         </div>
-      </a>
+      </div>
     </Link>
   )
 }
