@@ -29,14 +29,6 @@
   background: var(--sub-background);
 }
 
-.blog-header {
-  font-size: 3rem;
-  padding: 2rem;
-  font-family: 'Fjalla One';
-  user-select: none;
-  text-align: center;
-}
-
 .article-card {
   border-bottom: solid var(--dim-border) 1px;
   padding: 1rem;

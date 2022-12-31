@@ -15,9 +15,11 @@ function ArticleCard(props: Props) {
   return (
     <div className={'article-card'}>
       <div>
-        <a href={props.to}>
-          <h3>{props.title}</h3>
-        </a>
+        <Link href={props.to}>
+          <a>
+            <h3>{props.title}</h3>
+          </a>
+        </Link>
         <div className={'flex'}>
           <TimeIcon />
           <p>{props.publish}</p>

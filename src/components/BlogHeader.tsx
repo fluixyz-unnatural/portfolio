@@ -1,13 +1,5 @@
-import Link from 'next/link'
+import SubHeader from './SubHeader'
 
-const BlogHeader = () => {
-  return (
-    <Link href="/blog/page/1">
-      <a>
-        <h1 className={'blog-header'}>{"fluixyz's log"}</h1>
-      </a>
-    </Link>
-  )
-}
+const BlogHeader = () => <SubHeader href="/blog/page/1" label="fluixyz' log" />
 
 export default BlogHeader

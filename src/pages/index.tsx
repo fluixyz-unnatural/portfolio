@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Box, Divider, VStack, chakra } from '@chakra-ui/react'
 
 export default function Home() {
   return (

@@ -99,7 +99,7 @@ const Page = (props: PageProps) => {
   const router = useRouter()
   const routePage = (offset: number) => {
     let to = props.page + offset
-    to = Math.max(0, to)
+    to = Math.max(1, to)
     to = Math.min(props.count, to)
     router.push(`/blog/category/${props.category}/page/${to}`)
   }
