@@ -110,10 +110,16 @@ main {
   font-family: 'Fjalla One';
   user-select: none;
   text-align: center;
+  width: 100%;
 }
 
 .sub-header > * {
   margin-top: 2rem;
+}
+
+.sub-header h1 {
+  overflow: hidden;
+  height: 96px;
 }
 
 .focus-dummy {
