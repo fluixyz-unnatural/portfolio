@@ -86,7 +86,7 @@ const Page = (props: PageProps) => {
   const cards = props.articles.map(
     (elm: BlogType & MicroCMSListContent, index: number) => (
       <ArticleCard
-        firstView={index < 3}
+        firstView={index < 4}
         key={elm.id}
         title={elm.title}
         tag={elm.category.map((cat: CategoryType & MicroCMSListContent) => {

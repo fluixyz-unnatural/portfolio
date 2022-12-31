@@ -67,7 +67,7 @@ const Page = (props: PageProps) => {
         thumbnail={elm.thumbnail ? elm.thumbnail.url : '/404.png'}
         publish={elm.publishedAt?.split('T')[0]!}
         revised={elm.revisedAt?.split('T')[0]!}
-        firstView={index < 3}
+        firstView={index < 4}
       />
     )
   )
