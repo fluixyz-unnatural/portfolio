@@ -83,19 +83,22 @@ interface PageProps {
 }
 
 const Page = (props: PageProps) => {
-  const cards = props.articles.map((elm: BlogType & MicroCMSListContent) => (
-    <ArticleCard
-      key={elm.id}
-      title={elm.title}
-      tag={elm.category.map((cat: CategoryType & MicroCMSListContent) => {
-        return { id: cat.id, name: cat.name }
-      })}
-      to={`/blog/${elm.id}`}
-      thumbnail={elm.thumbnail ? elm.thumbnail.url : '/404.png'}
-      publish={elm.publishedAt?.split('T')[0]!}
-      revised={elm.revisedAt?.split('T')[0]!}
-    />
-  ))
+  const cards = props.articles.map(
+    (elm: BlogType & MicroCMSListContent, index: number) => (
+      <ArticleCard
+        firstView={index < 3}
+        key={elm.id}
+        title={elm.title}
+        tag={elm.category.map((cat: CategoryType & MicroCMSListContent) => {
+          return { id: cat.id, name: cat.name }
+        })}
+        to={`/blog/${elm.id}`}
+        thumbnail={elm.thumbnail ? elm.thumbnail.url : '/404.png'}
+        publish={elm.publishedAt?.split('T')[0]!}
+        revised={elm.revisedAt?.split('T')[0]!}
+      />
+    )
+  )
   const router = useRouter()
   const routePage = (offset: number) => {
     let to = props.page + offset

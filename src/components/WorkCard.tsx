@@ -8,6 +8,7 @@ interface Props {
   tags: Array<string>
   blog: string
   confidence: number
+  firstView: boolean
 }
 
 const WorkCard = (props: Props) => {
@@ -20,6 +21,8 @@ const WorkCard = (props: Props) => {
           width="360"
           height="220"
           quality={75}
+          priority={props.firstView}
+          loading={props.firstView ? 'eager' : 'lazy'}
         />
         <div>
           <h3>{props.title}</h3>
