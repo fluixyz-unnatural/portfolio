@@ -5,10 +5,6 @@ class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Yanone+Kaffeesatz:wght@200&display=swap&text=fluixyz'slogwork"
-            rel="stylesheet"
-          />
         </Head>
         <body>
           <noscript

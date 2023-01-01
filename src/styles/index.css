@@ -106,7 +106,7 @@ main {
 .sub-header {
   font-size: 1.6rem;
   padding: 2rem;
-  font-family: 'Fjalla One';
+  font-family: var(--fjalla_one);
   user-select: none;
   text-align: center;
   width: 100%;
