@@ -105,7 +105,7 @@ main {
 
 .sub-header {
   font-size: 1.6rem;
-  padding: 2rem;
+  padding: 2rem 0;
   font-family: var(--fjalla_one);
   user-select: none;
   text-align: center;
@@ -116,7 +116,8 @@ main {
 
 .sub-header h1 {
   overflow: hidden;
-  height: 76.797px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .focus-dummy {
