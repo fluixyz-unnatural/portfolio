@@ -23,16 +23,10 @@ export default function Home() {
         <h1 className="title-logo">fluixyz</h1>
         <ul className="top-links">
           <li>
-            <Link href="/blog/page/1">blog</Link>
-          </li>
-          <li>
             <Link href="/works">works</Link>
           </li>
           <li>
             <Link href="https://github.com/fluixyz-unnatural">github</Link>
-          </li>
-          <li>
-            <Link href="https://twitter.com/higara333">twitter</Link>
           </li>
         </ul>
       </section>
